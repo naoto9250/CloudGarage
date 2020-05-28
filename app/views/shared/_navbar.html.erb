@@ -20,7 +20,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
           <button class="btn btn-form btn-small">
-            <%= link_to "Become a host", new_room_path, style: "color: white; text-decoration: none;" %>
+            <%= link_to "出品する", new_room_path, style: "color: white; text-decoration: none;" %>
           </button>
         </li>
         <% if (!user_signed_in?) %>
@@ -33,19 +33,16 @@
               <%= current_user.fullname %> <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to "Manage Listing", rooms_path %></li>
-              <li><%= link_to "List Your Space", new_room_path %></li>
-              <li><%= link_to "Your Resavations", your_reservations_path %></li>
-              <li><%= link_to "Your Trips", your_trips_path %></li>
+              <li><%= link_to "アイテムの管理", rooms_path %></li>
+              <li><%= link_to "出品する", new_room_path %></li>
+              <li><%= link_to "借りたアイテム", your_reservations_path %></li>
+              <li><%= link_to "出品したアイテム", your_trips_path %></li>
               <li role="separator" class="divider"></li>
               <li><%= link_to "プロフィール", edit_user_registration_path %></li>
               <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
             </ul>
           </li>
         <% end %>
-
-        
-        
       </ul>
     </div><!--/.nav-collapse -->
   </div>
