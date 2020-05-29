@@ -15,7 +15,6 @@
     <div class="row">
       <div class="col-md-8">
         <h1><%= @room.listing_name %></h1>
-        <%= @room.address %>
       </div>
       <div class="col-md-4 text-center">
         <%= image_tag avatar_url(@room.user), class: "img-circle avatar-large" %><br><br>
@@ -23,35 +22,8 @@
       </div>
     </div>
     <hr>
-
-    <!-- Room Info -->
-    <div class="row text-babu">
-      <div class="row text-center row-space-1">
-        <div class="col-md-3">
-          <i class="fa fa-home fa-2x"></i>
-        </div>
-        <div class="col-md-3">
-          <i class="far fa-user-circle fa-2x"></i>
-        </div>
-        <div class="col-md-3">
-          <i class="fa fa-bed fa-2x"></i>
-        </div>
-        <div class="col-md-3">
-          <i class="fa fa-bath fa-2x"></i>
-        </div>
-      </div>
-
-      <div class="row text-center">
-        <div class="col-md-3"><%= @room.home_type %></div>
-        <div class="col-md-3"><%= pluralize(@room.accommodate, "Guest") %></div>
-        <div class="col-md-3"><%= pluralize(@room.bed_room, "Bebroom") %></div>
-        <div class="col-md-3"><%= pluralize(@room.bath_room, "Bathroom") %></div>
-      </div>
-
-    </div>
-    <hr>
     
-    <!-- About -->
+    <!-- アイテム名・詳細 -->
     <div class="row">
       <div class="col-md-12">
         <h3>アイテムについて</h3>
@@ -60,27 +32,14 @@
     </div>
     <hr>
 
-    <!-- Amenities -->
+    <!-- アイテムの情報 -->
     <div class="row">
-      <div class="col-md-3">
-        <h4>アイテムの情報</h4>
-      </div>
-
-      <div class="col-md-9">
-        <div class="row">
-          <div class="col-md-6">
-            <ul class="amenities">
-              <li class="<%= 'text-line-through' if !@room.is_tv %>">美品</li>
-              <li class="<%= 'text-line-through' if !@room.is_kitchen %>">キッチン</li>
-              <li class="<%= 'text-line-through' if !@room.is_internet %>">インターネット</li>
-            </ul>
-          </div>
-          <div class="col-md-6">
-            <ul class="amenities">
-              <li class="<%= 'text-line-through' if !@room.is_heating %>">Heating</li>
-              <li class="<%= 'text-line-through' if !@room.is_air %>">Air Conditioning</li>
-            </ul>
-          </div>
+      <div class="col-md-12">
+        <h3>アイテムの情報</h3>
+        <div class="row text-center">
+          <div class="col-md-4">商品の状態<br><%= @room.home_type %></div>
+          <div class="col-md-4">配送料の負担<br><%= @room.room_type %></div>
+          <div class="col-md-4">破損時の保証<br><%= @room.accommodate %>円</div>
         </div>
       </div>
     </div>

@@ -1,7 +1,6 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <span><i class="fa fa-bolt" style="color: #ffb400"></i> $<%= @room.price %></span>
-    <span class="pull-right">Per Night</span>
+    <span>1ヶ月 / <%= @room.price %>円</span>
   </div>
   <div class="panel-body">
     <%= form_for([@room, @room.reservations.new]) do |f| %>
@@ -38,7 +37,7 @@
 
       <br/>
 
-      <%= f.submit "Book Now", id: "btn_book", class: "btn btn-normal btn-block", disabled: true %>
+      <%= f.submit "レンタルする", id: "btn_book", class: "btn btn-normal btn-block", disabled: true %>
     <% end %>
   </div>
 </div>
